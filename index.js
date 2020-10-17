@@ -1,6 +1,7 @@
 const dotenv = require('dotenv').config()
 const Discord = require("discord.js")
 const client = new Discord.Client({ disableMentions: "everyone" });
+const { prefix, TOKEN } = require('./config.json')
 
 client.on('ready', ()  => {
     console.log(`${client.user.username} is online!`)
@@ -15,4 +16,4 @@ client.on('message', async message => {
     
 })
 
-client.login(process.env.BOT_TOKEN)
+client.login(TOKEN)
